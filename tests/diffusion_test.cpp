@@ -10,8 +10,7 @@ TEST_CASE("Random Walk Constraints") {
     std::random_device rd;
     std::mt19937 rand(rd());
 
-    int position = randomWalk(1, rand);
-    REQUIRE((position == 1 || position == -1));
+    REQUIRE(std::abs(randomWalk(1, rand)) == 1);
 
     int N = 100;
     REQUIRE(std::abs(randomWalk(N, rand)) <= N);
